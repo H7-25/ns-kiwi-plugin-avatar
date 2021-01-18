@@ -7,14 +7,14 @@ kiwi.plugin('avatar', (kiwi) => {
     config.setDefaults();
 
     kiwi.on('irc.join', (event, net) => {
-        kiwi.Vue.nextTick(() => {
+        setTimeout(() => {
             updateAvatar(net, event.nick);
         });
     });
 
     kiwi.on('irc.wholist', (event, net) => {
         let nicks = event.users.map((user) => user.nick);
-        kiwi.Vue.nextTick(() => {
+        setTimeout(() => {
             nicks.forEach((nick) => {
                 updateAvatar(net, nick, false);
             });
@@ -22,7 +22,7 @@ kiwi.plugin('avatar', (kiwi) => {
     });
 
     kiwi.on('irc.account', (event, net) => {
-        kiwi.Vue.nextTick(() => {
+        setTimeout(() => {
             updateAvatar(net, event.nick, true);
         });
     });

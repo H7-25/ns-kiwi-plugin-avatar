@@ -1,7 +1,7 @@
 /* global kiwi:true */
 
 export function setDefaults() {
-    setSettingDefault('plugin-avatar.gatewayURL', '//www.simosnap.org/uploads/avatars/');
+    setSettingDefault('plugin-avatar.gatewayURL', 'https://www.simosnap.org/uploads/avatars/');
 }
 
 function setSettingDefault(name, value) {
